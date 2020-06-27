@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Container from "@material-ui/core/Container";
 import Landing from "./pages/Landing";
+import About from "./pages/About"
 
 function App() {
   return (
@@ -13,9 +14,10 @@ function App() {
         <Navbar />
         <Container maxWidth="md">
           <Route exact path="/" component={Landing} />
-        </Container>
+          <Route exact path="/about" component={About} />
+        </Container> 
       </div>
-    </Router>
+                                 </Router>
   );
 }
 

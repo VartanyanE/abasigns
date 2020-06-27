@@ -22,7 +22,7 @@ export default function ImgMediaCard() {
           component="img"
           alt="Sign Pic"
           height="100"
-          image="../../sign.jpg"
+          image=""
           title="Sign Pic"
         />
       </CardActionArea>
