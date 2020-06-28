@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import About from "../pages/About"
 import Icon from '@material-ui/core/Icon';
+import Box from '@material-ui/core/Box';
 import SaveIcon from '@material-ui/icons/Save';
 
 
@@ -14,7 +15,8 @@ import SaveIcon from '@material-ui/icons/Save';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    display: 'flex',
+    
+   
   },
   paper: {
     padding: theme.spacing(2),
@@ -34,8 +36,14 @@ const useStyles = makeStyles((theme) => ({
     height: "100px",
   },
 
-  button: {
-    justifyContent: "center"
+  buttonCenter: {
+    display: "flex",
+    justifyContent: "center",
+    color: theme.palette.success.light
+    },
+    
+  buttonStyle : {
+    color: theme.palette.success.light
   }
 }));
 
@@ -57,14 +65,15 @@ const handleClick = () => {
     <Router>
     <div className={classes.root}>
       <Grid container spacing={1}>
-        <Grid item xs={0} sm={5}></Grid>
-        <Grid item xs={12} sm={2}>
-        <Button variant="contained" color="primary" href="/about">
+        <Grid item xs={2} sm={5}></Grid>
+          <Grid item xs={8} sm={2}  >
+          <Box className={classes.buttonCenter} > <Button className={classes.buttonStyle} variant="contained" color="primary" href="/about" >
         Landing
       </Button>
+      </Box>
         </Grid>
-        <Grid item xs={0} sm={5}></Grid>
-        <Grid item xs={6} className={classes.button}>
+        <Grid item xs={2} sm={5}></Grid>
+        <Grid item xs={6} >
        {showButton ? "" :  <Button variant="outlined" color="secondary" >
         Secondary 
   </Button> }

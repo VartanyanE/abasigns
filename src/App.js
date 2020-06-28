@@ -12,7 +12,7 @@ function App() {
     <Router>
       <div>
         <Navbar />
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
           <Route exact path="/" component={Landing} />
           <Route exact path="/about" component={About} />
         </Container> 

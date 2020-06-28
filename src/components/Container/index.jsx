@@ -6,7 +6,7 @@ export default function MainContainer() {
     return (
         
         
-        <Container maxWidth="sm">
+        <Container maxWidth="lg">
           <Typography component="div" style={{ height: '100vh' }} />
         </Container>
       

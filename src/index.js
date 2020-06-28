@@ -9,12 +9,19 @@ import { createMuiTheme } from "@material-ui/core";
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#035efc",
+      main: "#03a9f4",
+      text: "#81c784"
     },
+    secondary: {
+      main: "#f50057",
+      text: "#81c784"
+    },
+    success: {
+      main: "#bcbda4",
+      light: "#f4fc03"
+    }
   },
-  typography: {
-    fontFamily: "Bentham",
-  },
+ 
 });
 
 ReactDOM.render(
