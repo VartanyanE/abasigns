@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, HashRouter } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Container from "@material-ui/core/Container";
 import Landing from "./pages/Landing";
@@ -37,7 +37,7 @@ const theme = createMuiTheme({
   
   
   return (
-    <Router>
+    <Router basename="/">
       <ModeContext.Provider value={{darkMode, setDarkMode}}>
       <ThemeProvider theme={theme}>
       <Paper style={{height: "100vh"}}>
