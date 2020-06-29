@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/abasigns/static/css/main.975a58a9.chunk.css",
-    "main.js": "/abasigns/static/js/main.d2e4d3ec.chunk.js",
-    "main.js.map": "/abasigns/static/js/main.d2e4d3ec.chunk.js.map",
+    "main.js": "/abasigns/static/js/main.387f0083.chunk.js",
+    "main.js.map": "/abasigns/static/js/main.387f0083.chunk.js.map",
     "runtime-main.js": "/abasigns/static/js/runtime-main.42137865.js",
     "runtime-main.js.map": "/abasigns/static/js/runtime-main.42137865.js.map",
     "static/js/2.47e9fff0.chunk.js": "/abasigns/static/js/2.47e9fff0.chunk.js",
     "static/js/2.47e9fff0.chunk.js.map": "/abasigns/static/js/2.47e9fff0.chunk.js.map",
     "index.html": "/abasigns/index.html",
-    "precache-manifest.01e74e737c8a3bb44d1501a3c2d2fea7.js": "/abasigns/precache-manifest.01e74e737c8a3bb44d1501a3c2d2fea7.js",
+    "precache-manifest.6ef50d4cabc8e3e32007500fb262f3d6.js": "/abasigns/precache-manifest.6ef50d4cabc8e3e32007500fb262f3d6.js",
     "service-worker.js": "/abasigns/service-worker.js",
     "static/css/main.975a58a9.chunk.css.map": "/abasigns/static/css/main.975a58a9.chunk.css.map",
     "static/js/2.47e9fff0.chunk.js.LICENSE.txt": "/abasigns/static/js/2.47e9fff0.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.42137865.js",
     "static/js/2.47e9fff0.chunk.js",
     "static/css/main.975a58a9.chunk.css",
-    "static/js/main.d2e4d3ec.chunk.js"
+    "static/js/main.387f0083.chunk.js"
   ]
 }
