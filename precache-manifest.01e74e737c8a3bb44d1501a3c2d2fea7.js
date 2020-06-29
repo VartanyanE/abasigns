@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b22c2551ddeb0ed8eabb103d679a471e",
+    "revision": "26cc2093bb6734e05216d61fbf44d9ec",
     "url": "/abasigns/index.html"
   },
   {
-    "revision": "ebce54addcaa57ec86b4",
+    "revision": "614a82052f14c6d56859",
     "url": "/abasigns/static/css/main.975a58a9.chunk.css"
   },
   {
-    "revision": "8d8db2e2cf7e7c59cbc1",
-    "url": "/abasigns/static/js/2.2d9d34bd.chunk.js"
+    "revision": "bdfbd8f938eb8db2c3b6",
+    "url": "/abasigns/static/js/2.47e9fff0.chunk.js"
   },
   {
     "revision": "0749163b59fbee32225059cb60c18af6",
-    "url": "/abasigns/static/js/2.2d9d34bd.chunk.js.LICENSE.txt"
+    "url": "/abasigns/static/js/2.47e9fff0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ebce54addcaa57ec86b4",
-    "url": "/abasigns/static/js/main.80be9288.chunk.js"
+    "revision": "614a82052f14c6d56859",
+    "url": "/abasigns/static/js/main.d2e4d3ec.chunk.js"
   },
   {
     "revision": "252264eeb5f992267a66",
