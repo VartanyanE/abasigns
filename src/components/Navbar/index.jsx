@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -8,6 +8,8 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import MenuListComposition from "../Menu";
 import { Box } from "@material-ui/core";
+import ModeContext from "../../utils/ModeContext"
+import Switch from '@material-ui/core/Switch';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,6 +21,10 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  navbar: {
+    // backgroundColor: theme.palette.success.light
+
+  }
 }));
 
 const handleClick = () => {
@@ -28,10 +34,11 @@ const handleClick = () => {
 export default function ButtonAppBar() {
   const classes = useStyles();
   const [color, setColor] = useState();
+  const {darkMode, setDarkMode} = useContext(ModeContext)
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.navbar} >
         <Toolbar>
           <Box>
             <MenuListComposition />
@@ -40,6 +47,7 @@ export default function ButtonAppBar() {
           <Typography variant="h5" className={classes.title}>
             ABA Signs
           </Typography>
+          <Switch  size="small" checked={darkMode} onChange={()=> setDarkMode(!darkMode) } />
         </Toolbar>
       </AppBar>
     </div>

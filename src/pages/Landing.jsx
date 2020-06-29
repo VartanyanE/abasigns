@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     },
     
   buttonStyle : {
-    color: theme.palette.success.light
+    // color: theme.palette.success.light
   }
 }));
 
@@ -53,14 +53,8 @@ function Landing() {
   const [showButton, setShowButton]= useState(false);
 
   
-const handleClick = () => {
-  if(showButton === false)
-  {setShowButton(true);
-} else  {
-  setShowButton(false);
-  
-}
-}
+
+
   return (
     <Router>
     <div className={classes.root}>
@@ -74,7 +68,7 @@ const handleClick = () => {
         </Grid>
         <Grid item xs={2} sm={5}></Grid>
         <Grid item xs={6} >
-       {showButton ? "" :  <Button variant="outlined" color="secondary" >
+       {showButton ? "" :  <Button variant="contained" color="primary" className={classes.buttonStyle}  >
         Secondary 
   </Button> }
         </Grid>
@@ -82,7 +76,7 @@ const handleClick = () => {
        <Button
         variant="contained"
         color="primary"
-        onClick={handleClick}
+        onClick={() => setShowButton(!showButton)}
        
         endIcon={<SaveIcon>send</SaveIcon>}
       >
