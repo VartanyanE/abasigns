@@ -1,10 +1,10 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
+// import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import ImgMediaCard from "../components/Card";
-import {Button} from "@material-ui/core"
-import Box from '@material-ui/core/Box';
+// import ImgMediaCard from "../components/Card";
+import { Button } from "@material-ui/core";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     height: "200px",
     padding: theme.spacing(2),
     textAlign: "center",
-             color: theme.palette.text.secondary,
+    color: theme.palette.text.secondary,
   },
 
   card: {
@@ -30,9 +30,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     display: "flex",
     justifyContent: "center",
-    
-   
-  }
+  },
 }));
 
 function About() {
@@ -44,11 +42,13 @@ function About() {
         {/* <Grid item xs={0} sm={2}></Grid> */}
         <Grid item xs={2} sm={5}></Grid>
         <Grid item xs={8} sm={2}>
-        <Box className={classes.button} ><Button variant="contained" color="primary" href="/">
-        About
-      </Button></Box>
+          <Box className={classes.button}>
+            <Button variant="contained" color="primary" href="/">
+              About
+            </Button>
+          </Box>
         </Grid>
-        <Grid item xs={2} sm={5}></Grid>
+        {/* <Grid item xs={2} sm={5}></Grid>
         <Grid item xs={6}>
           <Paper className={classes.paper}>Card</Paper>
         </Grid>
@@ -66,7 +66,7 @@ function About() {
         </Grid>
         <Grid item xs={3}>
           <Paper className={classes.paper}>Card</Paper>
-        </Grid>
+        </Grid> */}
       </Grid>
     </div>
   );
