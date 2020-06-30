@@ -35,6 +35,8 @@ const useStyles = makeStyles((theme) => ({
   buttonCenter: {
     display: "flex",
     justifyContent: "center",
+    height: "100px",
+    alignItems: "center"
   },
 
   buttonStyle: {
@@ -62,13 +64,13 @@ function Landing() {
             <Box className={classes.buttonCenter}>
               {" "}
               <Paper elevation="10 ">
-                <Button
+                {/* <Button
                   variant="contained"
                   color="primary"
                   href={process.env.PUBLIC_URL + "/about"}
                 >
                   Landing
-                </Button>
+                </Button> */}
               </Paper>
             </Box>
           </Grid>

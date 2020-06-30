@@ -7,9 +7,12 @@ import Typography from "@material-ui/core/Typography";
 // import IconButton from "@material-ui/core/IconButton";
 // import MenuIcon from "@material-ui/icons/Menu";
 import MenuListComposition from "../Menu";
-import { Box } from "@material-ui/core";
+import { Box, Button, IconButton } from "@material-ui/core";
 import ModeContext from "../../utils/ModeContext";
 import Switch from "@material-ui/core/Switch";
+import SvgIcon from '@material-ui/core/SvgIcon';
+import {Link} from "react-router-dom"
+import BrightnessHighIcon from '@material-ui/icons/BrightnessHigh';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,15 +23,24 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    fontFamily: 'Libre Baskerville',
   },
   navbar: {
     // backgroundColor: theme.palette.success.light
   },
+  
 }));
 
 // const handleClick = () => {
 //   console.log("this was clicked");
 // };
+function HomeIcon(props) {
+  return (
+    <SvgIcon {...props}>
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+    </SvgIcon>
+  );
+}
 
 export default function ButtonAppBar() {
   const classes = useStyles();
@@ -39,20 +51,29 @@ export default function ButtonAppBar() {
     <div className={classes.root}>
       <AppBar position="static" className={classes.navbar}>
         <Toolbar>
-          <Box>
-            <MenuListComposition />
+          <Box justify="flex-start">
+            {/* <MenuListComposition /> */}
+
+            <Link to="/">
+
+            <IconButton href="/" size="small">
+            <HomeIcon color="disabled" />
+            </IconButton>
+
+            </Link>
           </Box>
 
           <Typography variant="h5" className={classes.title}>
             ABA Signs
           </Typography>
-          <Switch
-            style={{ color: "#21173d" }}
-            size="small"
-            checked={darkMode}
-            onChange={() => setDarkMode(!darkMode)}
-            color="disabled"
-          />
+          <IconButton
+           
+            
+            
+            onClick={() => setDarkMode(!darkMode)}>
+              <BrightnessHighIcon />
+              </IconButton>
+
         </Toolbar>
       </AppBar>
     </div>
