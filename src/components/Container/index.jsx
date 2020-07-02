@@ -7,7 +7,7 @@ export default function MainContainer() {
         
         
         <Container maxWidth="lg">
-          <Typography component="div" style={{ height: '100vh' }} />
+          <Typography component="div"  />
         </Container>
       
     )

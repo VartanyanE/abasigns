@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -8,36 +8,25 @@ import About from "./pages/About";
 import { ThemeProvider, Paper, CssBaseline } from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core";
 import ModeContext from "./utils/ModeContext";
+import ImageCardContext from "./utils/ImageCardContext"
 import Yellowtail from "./fonts/Yellowtail.ttf";
+import imagecard from "./imagecard.json"
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
+  const [imageCard, setImageCard] = useState([]);
 
-  // const yellowtail = {
-  //   fontFamily: "Yellowtail",
-  //   fontStyle: "normal",
-  //   fontDisplay: "swap",
-  //   fontWeight: 300,
-  //   src: `
-  //     local('Yellowtail'),
-  //     local('Yellowtail-Regular'),
-  //     url(${Yellowtail}) format('ttf')
-  //   `,
-  //   unicodeRange:
-  //     "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF",
-  // };
+  
+  useEffect(() => {
+      setImageCard(imagecard);
+  });
 
+  
   const theme = createMuiTheme({
     typography: {
       fontFamily: "MuseoModerno, Yellowtail, Arial",
     },
-    // overrides: {
-    //   MuiCssBaseline: {
-    //     "@global": {
-    //       "@font-face": [yellowtail],
-    //     },
-    //   },
-    // },
+  
     palette: {
       type: darkMode ? "dark" : "light",
       primary: {
@@ -53,14 +42,16 @@ function App() {
       },
     },
   });
-
+  
   return (
     <Router basename={process.env.PUBLIC_URL}>
       {/* <Switch> */}
       <ModeContext.Provider value={{ darkMode, setDarkMode }}>
+        <ImageCardContext.Provider value ={{imageCard, setImageCard}}>
+
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Paper style={{ height: "100vh" }}>
+          <Paper>
             <div>
               <Navbar />
               <Container maxWidth="lg">
@@ -70,6 +61,7 @@ function App() {
             </div>
           </Paper>
         </ThemeProvider>
+        </ImageCardContext.Provider>
       </ModeContext.Provider>
       {/* </Switch> */}
     </Router>
