@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
@@ -9,14 +9,14 @@ import { BrowserRouter as Router } from "react-router-dom";
 // import Icon from "@material-ui/core/Icon";
 // import SaveIcon from "@material-ui/icons/Save";
 import Box from "@material-ui/core/Box";
-import CardComp from "../components/Card"
-import ImageCardContext from "../utils/ImageCardContext"
+import CardComp from "../components/Card";
+import ImageCardContext from "../utils/ImageCardContext";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
- card: {
+  card: {
     maxWidth: 345,
   },
   media: {
@@ -36,8 +36,6 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
 
-
-
   buttonCenter: {
     display: "flex",
     justifyContent: "center",
@@ -52,18 +50,23 @@ const useStyles = makeStyles((theme) => ({
 
 function Landing() {
   const classes = useStyles();
-  const {imageCard, setImageCard} = useContext(ImageCardContext);
+  const { imageCard, setImageCard } = useContext(ImageCardContext);
 
- 
   return (
     <Router>
       <div className={classes.root}>
         <Grid container spacing={2}>
-          {imageCard.map(imageMap => (
-           <CardComp image={imageMap.image} />
-          ))}
-         
-          
+          <Grid item xs={2} sm={4}></Grid>
+          <Grid item xs={8} sm={4}>
+            {imageCard.map((imageMap) => (
+              <CardComp
+                image={imageMap.image}
+                title={imageMap.name}
+                key={imageMap.id}
+              />
+            ))}
+          </Grid>
+          <Grid item xs={2} sm={4}></Grid>
         </Grid>
       </div>
     </Router>
