@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 345,
   },
   media: {
-    height: 140,
+    height: 240,
   },
   paper: {
     padding: theme.spacing(2),
@@ -56,17 +56,18 @@ function Landing() {
     <Router>
       <div className={classes.root}>
         <Grid container spacing={2}>
-          <Grid item xs={2} sm={4}></Grid>
-          <Grid item xs={8} sm={4}>
+          <Grid item xs={0} sm={3}></Grid>
+          <Grid item xs={12} sm={6}>
             {imageCard.map((imageMap) => (
               <CardComp
                 image={imageMap.image}
                 title={imageMap.name}
                 key={imageMap.id}
+                description={imageMap.description}
               />
             ))}
           </Grid>
-          <Grid item xs={2} sm={4}></Grid>
+          <Grid item xs={0} sm={3}></Grid>
         </Grid>
       </div>
     </Router>

@@ -3,35 +3,35 @@
     "id": 1,
     "name": "Image 1",
     "image": "https://images.unsplash.com/photo-1525011268546-bf3f9b007f6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
-    "occupation": "Fry Cook",
+    "description": "Job Description",
     "location": "A Pineapple Under the Sea"
   },
   {
     "id": 2,
     "name": "Image 2",
     "image": "https://images.unsplash.com/photo-1525081905268-fc0b46e9d786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMDk0fQ&auto=format&fit=crop&w=1950&q=80",
-    "occupation": "Restaurant Owner",
+    "description": "Job Description",
     "location": "A Giant Anchor"
   },
   {
     "id": 3,
     "name": "Image 3",
     "image": "https://images.unsplash.com/photo-1496449903678-68ddcb189a24?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-    "occupation": "Cashier",
+    "description": "Job Description",
     "location": "An Easter Island Head"
   },
   {
     "id": 4,
     "name": "Image 4",
     "image": "https://images.unsplash.com/photo-1527174744973-fc9ce02c141d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1506&q=80",
-    "occupation": "Boy Genius",
+    "description": "Job Description",
     "location": "A Secret Laboratory"
   },
   {
     "id": 5,
     "name": "Image 5",
     "image": "https://images.unsplash.com/photo-1543616991-75a2c125ff5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
-    "occupation": "A Cowardly Dog",
+    "description": "Job Description",
     "location": "Nowhere, Kansas"
   }
 ]
