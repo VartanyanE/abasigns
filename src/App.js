@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+
 import Container from "@material-ui/core/Container";
 import Landing from "./pages/Landing";
 import About from "./pages/About";
@@ -11,6 +11,7 @@ import ModeContext from "./utils/ModeContext";
 import ImageCardContext from "./utils/ImageCardContext"
 import Yellowtail from "./fonts/Yellowtail.ttf";
 import imagecard from "./imagecard.json"
+import Drawer from "./components/Drawer";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -53,7 +54,8 @@ function App() {
           <CssBaseline />
           <Paper>
             <div>
-              <Navbar />
+             
+              <Drawer />
               <Container maxWidth="lg">
                 <Route exact path="/" component={Landing} />
                 <Route path="/about" component={About} />
