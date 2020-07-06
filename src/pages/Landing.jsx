@@ -15,6 +15,7 @@ import ImageCardContext from "../utils/ImageCardContext";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    
   },
   card: {
     maxWidth: 345,
@@ -29,11 +30,8 @@ const useStyles = makeStyles((theme) => ({
   },
 
   height: {
-    marginTop: "10px",
-    height: "200px",
-    padding: theme.spacing(2),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
+    marginTop: "40px",
+   
   },
 
   buttonCenter: {
@@ -57,7 +55,7 @@ function Landing() {
       <div className={classes.root}>
         <Grid container spacing={2}>
           <Grid item xs={0} sm={3}></Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={6} className={classes.height}>
             {imageCard.map((imageMap) => (
               <CardComp
                 image={imageMap.image}
