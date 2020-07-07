@@ -11,7 +11,7 @@ import ModeContext from "./utils/ModeContext";
 import ImageCardContext from "./utils/ImageCardContext"
 import Yellowtail from "./fonts/Yellowtail.ttf";
 import imagecard from "./imagecard.json"
-import Drawer from "./components/Drawer";
+import PersistentDrawerRight from "./components/Drawer";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -55,7 +55,7 @@ function App() {
           <Paper>
             <div>
              
-              <Drawer />
+              <PersistentDrawerRight />
               <Container maxWidth="lg">
                 <Route exact path="/" component={Landing} />
                 <Route path="/about" component={About} />
