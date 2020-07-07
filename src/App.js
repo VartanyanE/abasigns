@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import Services from "./pages/Services"
 
 import Container from "@material-ui/core/Container";
 import Landing from "./pages/Landing";
@@ -29,13 +30,13 @@ function App() {
     },
   
     palette: {
-      type: darkMode ? "dark" : "light",
+      type: "dark",
       primary: {
-        main: "#1a237e",
+        main: "#f44336",
         text: "#81c784",
       },
       secondary: {
-        main: "#f50057",
+        main: "#1b1b1b",
         text: "#81c784",
       },
       success: {
@@ -59,6 +60,7 @@ function App() {
               <Container maxWidth="lg">
                 <Route exact path="/" component={Landing} />
                 <Route path="/about" component={About} />
+                <Route path="/services" component={Services} />
               </Container>
             </div>
           </Paper>
