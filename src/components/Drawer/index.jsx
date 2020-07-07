@@ -22,8 +22,10 @@ import BrightnessHighIcon from "@material-ui/icons/BrightnessHigh";
 import ModeContext from "../../utils/ModeContext";
 import { Link } from "react-router-dom";
 import { Box} from "@material-ui/core";
+import { withRouter } from "react-router-dom";
+import PanoramaIcon from '@material-ui/icons/Panorama';
 
-const drawerWidth = 240;
+const drawerWidth = 160;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -90,11 +92,29 @@ function HomeIcon(props) {
     );
   }
 
-export default function PersistentDrawerRight() {
+const PersistentDrawerRight=(props)=> {
   const classes = useStyles();
   const theme = useTheme();
+  const { history } = props;
   const [open, setOpen] = React.useState(false);
   const { darkMode, setDarkMode } = useContext(ModeContext);
+  const itemsList = [
+    {
+      text: "Home",
+      icon: darkMode ? <HomeIcon /> : <HomeIcon color="primary" />,
+      onClick: () => history.push("/")
+    },
+    {
+      text: "Services",
+      icon: darkMode ? <PanoramaIcon /> : <PanoramaIcon color="primary" />,
+      onClick: () => history.push("/about")
+    },
+    {
+      text: "Contact",
+      icon:  darkMode ? <MailIcon /> : <MailIcon color="primary" />,
+      onClick: () => history.push("/contact")
+    }
+  ];
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -114,14 +134,7 @@ export default function PersistentDrawerRight() {
         })}
       >
         <Toolbar>
-        <Box>
-            {/* <MenuListComposition /> */}
-            <Link to="/">
-              <IconButton href="/" size="small">
-                <HomeIcon color="disabled" />
-              </IconButton>
-            </Link>
-          </Box>
+        
           <Typography style={{ flexGrow: 1 }} variant="h5">
             ABA SIGNS
           </Typography>
@@ -159,23 +172,28 @@ export default function PersistentDrawerRight() {
         </div>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+        {itemsList.map((item, index) => {
+          const { text, icon, onClick } = item;
+          return (
+            <ListItem button key={text} onClick={onClick}>
+              {icon && <ListItemIcon>{icon}</ListItemIcon>}
               <ListItemText primary={text} />
             </ListItem>
-          ))}
+          );
+        })}
         </List>
         <Divider />
-        <List>
+        {/* <List>
           {['All mail', 'Trash', 'Spam'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}
-        </List>
+        </List> */}
       </Drawer>
     </div>
   );
 }
+
+export default withRouter(PersistentDrawerRight)
