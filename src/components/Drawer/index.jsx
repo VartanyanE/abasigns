@@ -30,6 +30,20 @@ const drawerWidth = 160;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+   
+    
+  },
+
+  imageLogo : {
+    display: "flex",
+    height: "50px",
+    width: "160px",
+    justifyContent: "flex-start"
+  },
+
+  imageBox : {
+    flexGrow: 1
+
   },
   appBar: {
     transition: theme.transitions.create(['margin', 'width'], {
@@ -102,17 +116,25 @@ const PersistentDrawerRight=(props)=> {
     {
       text: "Home",
       icon: darkMode ? <HomeIcon /> : <HomeIcon color="primary" />,
-      onClick: () => history.push("/")
-    },
+      onClick: () => {
+        history.push("/");
+        setOpen(false)
+    }},
     {
       text: "Services",
       icon: darkMode ? <PanoramaIcon /> : <PanoramaIcon color="primary" />,
-      onClick: () => history.push("/about")
-    },
+      onClick: () => {
+        history.push("/services");
+        setOpen(false)
+     } },
     {
       text: "Contact",
       icon:  darkMode ? <MailIcon /> : <MailIcon color="primary" />,
-      onClick: () => history.push("/contact")
+      onClick: () =>{ 
+        history.push("/contact");
+        setOpen(false);
+
+      }
     }
   ];
 
@@ -127,29 +149,35 @@ const PersistentDrawerRight=(props)=> {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar
+      <AppBar color="Secondary"
         position="fixed"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
       >
-        <Toolbar>
+        <Toolbar disableGutters={true}>
         
-          <Typography style={{ flexGrow: 1 }} variant="h5">
+          {/* <Typography style={{ flexGrow: 1 }} variant="h5">
             ABA SIGNS
-          </Typography>
-          <IconButton
+          </Typography> */}
+          <Box className={classes.imageBox} >
+            <img className={classes.imageLogo} src={"https://storage.googleapis.com/wzukusers/user-32345829/images/5aac6a01bde5cYIMijbH/Business-card-backfinal-copy.gif"} />
+
+
+          </Box>
+          {/* <IconButton
             className={classes.navbar}
             onClick={() => setDarkMode(!darkMode)}
           >
             <BrightnessHighIcon />
-          </IconButton>
+          </IconButton> */}
           <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="end"
             onClick={handleDrawerOpen}
             className={clsx(open && classes.hide)}
+            style={{marginRight: "10px"}}
           >
             <MenuIcon />
           </IconButton>
@@ -175,7 +203,7 @@ const PersistentDrawerRight=(props)=> {
         {itemsList.map((item, index) => {
           const { text, icon, onClick } = item;
           return (
-            <ListItem button key={text} onClick={onClick}>
+            <ListItem button key={text} onClick={onClick} style={{color: "primary"}}>
               {icon && <ListItemIcon>{icon}</ListItemIcon>}
               <ListItemText primary={text} />
             </ListItem>
