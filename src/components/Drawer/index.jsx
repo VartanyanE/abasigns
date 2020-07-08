@@ -6,7 +6,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
+// import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -15,12 +15,12 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
+// import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import SvgIcon from "@material-ui/core/SvgIcon";
-import BrightnessHighIcon from "@material-ui/icons/BrightnessHigh";
+// import BrightnessHighIcon from "@material-ui/icons/BrightnessHigh";
 import ModeContext from "../../utils/ModeContext";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Box} from "@material-ui/core";
 import { withRouter } from "react-router-dom";
 import PanoramaIcon from '@material-ui/icons/Panorama';
@@ -111,7 +111,7 @@ const PersistentDrawerRight=(props)=> {
   const theme = useTheme();
   const { history } = props;
   const [open, setOpen] = React.useState(false);
-  const { darkMode, setDarkMode } = useContext(ModeContext);
+  const { darkMode } = useContext(ModeContext);
   const itemsList = [
     {
       text: "Home",
@@ -161,7 +161,7 @@ const PersistentDrawerRight=(props)=> {
             ABA SIGNS
           </Typography> */}
           <Box className={classes.imageBox} >
-            <img className={classes.imageLogo} src={"https://storage.googleapis.com/wzukusers/user-32345829/images/5aac6a01bde5cYIMijbH/Business-card-backfinal-copy.gif"} />
+            <img className={classes.imageLogo} alt= "" src={"https://storage.googleapis.com/wzukusers/user-32345829/images/5aac6a01bde5cYIMijbH/Business-card-backfinal-copy.gif"} />
 
 
           </Box>

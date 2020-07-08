@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Services from "./pages/Services"
-
+import Contact from "./pages/Contact"
 import Container from "@material-ui/core/Container";
 import Landing from "./pages/Landing";
-import About from "./pages/About";
+// import About from "./pages/About";
 import { ThemeProvider, Paper, CssBaseline } from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core";
 import ModeContext from "./utils/ModeContext";
 import ImageCardContext from "./utils/ImageCardContext"
-import Yellowtail from "./fonts/Yellowtail.ttf";
+// import Yellowtail from "./fonts/Yellowtail.ttf";
 import imagecard from "./imagecard.json"
 import PersistentDrawerRight from "./components/Drawer";
 
@@ -21,7 +21,7 @@ function App() {
   
   useEffect(() => {
       setImageCard(imagecard);
-  });
+  },[]);
 
   
   const theme = createMuiTheme({
@@ -59,7 +59,7 @@ function App() {
               <PersistentDrawerRight />
               <Container maxWidth="lg">
                 <Route exact path="/" component={Landing} />
-                <Route path="/about" component={About} />
+                <Route path="/contact" component={Contact} />
                 <Route path="/services" component={Services} />
               </Container>
             </div>
