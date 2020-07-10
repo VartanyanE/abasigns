@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Services from "./pages/Services"
-import Contact from "./pages/Contact"
+import Contact from "./pages/Contact/index"
 import Container from "@material-ui/core/Container";
 import Landing from "./pages/Landing";
 // import About from "./pages/About";
