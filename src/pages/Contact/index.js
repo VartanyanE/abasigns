@@ -81,55 +81,12 @@ function Contact() {
   return (
     <Router>
       <div className={classes.root}>
-        <Grid container spacing={0}>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}></Paper>
+        <Grid container spacing={0} style={{ marginTop: "100px" }}>
+          <Grid item xs={3}></Grid>
+          <Grid item xs={6} className={classes.buttonCenter}>
+            <h1>Contact</h1>
           </Grid>
-          <Grid item xs={6}>
-            <Paper className={classes.paper}>
-              <h1>Login</h1>
-            </Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}></Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper className={classes.paper}>
-              <form class="login">
-                <div className="form-group">
-                  <label for="exampleInputEmail1"></label>
-                  <input
-                    // onChange={handleChange}
-                    type="email"
-                    class="form-control"
-                    name="email"
-                    placeholder="Email Address"
-                    style={{ marginBottom: "8px" }}
-                  />
-                </div>
-                <div className="form-group">
-                  <label for="exampleInputPassword1"></label>
-                  <input
-                    // onChange={handleChange}
-                    type="password"
-                    class="form-control"
-                    name="password"
-                    placeholder="Password"
-                    style={{ marginBottom: "8px" }}
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  color="primary"
-                  variant="outlined"
-                  //   onClick={handleLogin}
-                  //   setUser={user}
-                >
-                  Login
-                </Button>
-              </form>
-            </Paper>
-          </Grid>
+          <Grid item xs={3}></Grid>
         </Grid>
       </div>
     </Router>
