@@ -26,7 +26,7 @@ function App() {
   
   const theme = createMuiTheme({
     typography: {
-      fontFamily: "MuseoModerno, Yellowtail, Arial",
+      fontFamily: " Yellowtail, Arial",
     },
   
     palette: {

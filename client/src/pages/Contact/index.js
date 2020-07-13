@@ -1,30 +1,25 @@
 import React, { useEffect } from "react";
-// import axios from "axios";
+import axios from "axios";
 import { makeStyles } from "@material-ui/core/styles";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Paper, Grid, Button } from "@material-ui/core";
 import {useForm} from "react-hook-form";
+import { toast, ToastContainer, Zoom, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+toast.configure();
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
 
-  card: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 240,
-  },
   paper: {
     padding: theme.spacing(2),
     textAlign: "center",
     color: theme.palette.text.secondary,
   },
 
-  height: {
-    marginTop: "50px",
-  },
+
 
   itemCenter: {
     display: "flex",
@@ -33,9 +28,12 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
 
-  buttonStyle: {
-    color: theme.palette.success.light,
+  customtoast: {
+    backgroundColor: "#f44336"
+
   },
+
+
 
   messageInput : {
     height: "80px"
@@ -45,58 +43,36 @@ const useStyles = makeStyles((theme) => ({
 function Contact() {
   const classes = useStyles();
   const {register, handleSubmit, reset} = useForm();
+  const successToast = () =>{
+    toast("Your Message Was Sent!", {
+      className: "customtoast",
+      draggable:true,
+      position: toast.POSITION.TOP_CENTER,
+      transition: Zoom,
+      autoClose: 4000
+    })
+  }
 
 
 
   const onSubmit = (data, event) => {
-    console.log(data);
-    event.target.reset()
+    axios({
+      method: "POST", 
+      url:"http://localhost:3002/send", 
+      data:data
+  }).then((response)=>{
+      if (response.data.msg === 'success'){
+          successToast();
+          event.target.reset()
+      }else if(response.data.msg === 'fail'){
+          alert("Message failed to send.")
+      }
+  })
+    
   }
 
 
-  // useEffect(async () => {
-  //   const result = await fetch('./api/formValues.json'); // result: { firstName: 'test', lastName: 'test2' }
-  //   reset(result); // asynchronously reset your form values
-  // }, [reset])
-
-  // const [form, setForm] = useState({
-  //   name: "",
-  //   message: "",
-  //   email: "",
-  //   sent: false,
-  //   buttonText: "Send Message",
-  // });
-
-  // const formSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   setForm({
-  //     buttonText: "...sending",
-  //   });
-
-  //   let data = {
-  //     name: form.name,
-  //     email: form.email,
-  //     message: form.message,
-  //   };
-
-  //   axios
-  //     .post("API_URI", data)
-  //     .then((res) => {
-  //       setForm({ sent: true }, resetForm());
-  //     })
-  //     .catch(() => {
-  //       console.log("Message not sent");
-  //     });
-  // };
-  // const resetForm = () => {
-  //   setForm({
-  //     name: "",
-  //     message: "",
-  //     email: "",
-  //     buttonText: "Message Sent",
-  //   });
-  // };
+ 
 
   return (
     <Router>
