@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 
-// const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3002;
 var app = express();
 
 app.use(function (req, res, next) {
@@ -48,8 +48,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-// app.listen(PORT, function () {
-//     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-//   });
+app.listen(PORT, function () {
+    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+  });
 
 module.exports = app;
