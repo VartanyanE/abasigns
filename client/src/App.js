@@ -46,7 +46,7 @@ function App() {
   });
   
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       {/* <Switch> */}
       <ModeContext.Provider value={{ darkMode, setDarkMode }}>
         <ImageCardContext.Provider value ={{imageCard, setImageCard}}>
