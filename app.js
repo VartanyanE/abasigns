@@ -31,10 +31,10 @@ app.use(cookieParser());
 app.use('/', index);
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use(express.static("client/build/index.html"));
 }
 
-app.use(express.static(path.join(__dirname, 'index.html')));
+// app.use(express.static(path.join(__dirname, 'public')));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
