@@ -1,5 +1,4 @@
 {
-  
   "name": "abasigns",
   "version": "0.1.0",
   "private": true,
@@ -22,7 +21,6 @@
     "react-toastify": "^6.0.8"
   },
   "scripts": {
-    
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

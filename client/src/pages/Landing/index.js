@@ -11,14 +11,14 @@ import { BrowserRouter as Router } from "react-router-dom";
 // import Box from "@material-ui/core/Box";
 import CardComp from "../../components/Card";
 import ImageCardContext from "../../utils/ImageCardContext";
-import "./style.css"
+import "./style.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    
+    backgroundColor: theme.palette.primary.main,
   },
-  
+
   card: {
     maxWidth: 345,
   },
@@ -33,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
 
   height: {
     marginTop: "50px",
-   
   },
 
   buttonCenter: {
@@ -59,16 +58,15 @@ function Landing() {
           <Grid item xs={0} sm={2}></Grid>
           <Grid item xs={12} sm={8} className={classes.height}>
             <div id="content">
-            {imageCard.map((imageMap) => (
-              <CardComp
-                image={imageMap.image}
-                title={imageMap.name}
-                key={imageMap.id}
-                description={imageMap.description}
-              />
-            ))}
+              {imageCard.map((imageMap) => (
+                <CardComp
+                  image={imageMap.image}
+                  title={imageMap.name}
+                  key={imageMap.id}
+                  description={imageMap.description}
+                />
+              ))}
             </div>
-           
           </Grid>
           <Grid item xs={0} sm={2}></Grid>
         </Grid>
